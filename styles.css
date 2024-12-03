@@ -1,0 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff; /* Light background for a fresh look */
+}
+
+.container {
+    text-align: center;
+    background: linear-gradient(135deg, #a0c4ff 30%, #b9fbc0 100%); /* Gradient background */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #1d3557; /* Dark blue for title */
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 20px auto; /* Center the board */
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff; /* White cells */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem; /* Larger text for X and O */
+    cursor: pointer;
+    border: 2px solid #333; /* Dark border */
+    border-radius: 10px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.cell:hover {
+    background-color: #ffe066; /* Yellow on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+#restart {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1d3557; /* Dark blue button */
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#restart:hover {
+    background-color: #457b9d; /* Lighter blue on hover */
+}
+
+#message {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #1d3557; /* Dark blue for messages */
+    animation: fadeIn 0.5s; /* Animation for messages */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for cell click */
+.cell.animate {
+    animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
